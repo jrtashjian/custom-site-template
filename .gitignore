@@ -1,4 +1,5 @@
 
 /log/
 /provision/vvv-nginx.conf
+/provision/vvv-ssl.conf
 /public_html
