@@ -55,3 +55,5 @@ cp -f "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf.tmpl" "${VVV_PATH_TO_SITE}/p
 sed -i "s#{{DOMAINS_HERE}}#${DOMAINS}#" "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf"
 cp -f "${VVV_PATH_TO_SITE}/provision/vvv-ssl.conf.tmpl" "${VVV_PATH_TO_SITE}/provision/vvv-ssl.conf"
 sed -i "s#{{DOMAIN}}#${DOMAIN}#g" "${VVV_PATH_TO_SITE}/provision/vvv-ssl.conf"
+
+openssl req -config ${VVV_PATH_TO_SITE}/provision/vvv-ssl.conf -new -sha256 -newkey rsa:2048 -nodes -keyout ${VVV_PATH_TO_SITE}/provision/${DOMAIN}.key -x509 -days 365 -out ${VVV_PATH_TO_SITE}/provision/${DOMAIN}.crt -subj "/C=US/ST=New York/L=New York/CN=${DOMAIN}"

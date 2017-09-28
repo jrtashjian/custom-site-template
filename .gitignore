@@ -2,4 +2,6 @@
 /log/
 /provision/vvv-nginx.conf
 /provision/vvv-ssl.conf
+/provision/*.crt
+/provision/*.key
 /public_html
