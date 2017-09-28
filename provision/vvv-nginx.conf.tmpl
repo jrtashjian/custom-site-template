@@ -10,4 +10,8 @@ server {
     set          $upstream {upstream};
 
     include      /etc/nginx/nginx-wp-common.conf;
+
+    ssl on;
+    ssl_certificate {vvv_path_to_site}/provision/{{DOMAIN}}.crt;
+    ssl_certificate_key {vvv_path_to_site}/provision/{{DOMAIN}}.key;
 }
